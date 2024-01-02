@@ -1,0 +1,4 @@
+CREATE TABLE someentity ( 
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL
+)
