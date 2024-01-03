@@ -47,8 +47,7 @@ mod test {
     #[test]
     fn test_hello() {
         use rocket::local::blocking::Client;
-
-        let client = Client::tracked(rocket()).unwrap();
+        let client = Client::tracked(rocket().configure(rocket::Config::figment().select("test"))).unwrap();
         let response = client.get("/").dispatch();
         assert_eq!(response.status(), Status::ServiceUnavailable);
 
